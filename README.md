@@ -137,10 +137,10 @@ Evaluation blocking rate 25-30%, consistent with training, indicating stable lea
 
 ### Analysis
 
-1. **Capacity Impact:** Lower capacity (10) yields higher blocking (25-30%) vs. capacity 20 (10-12%) due to resource scarcity.
-2. **Learning Efficiency:** Both agents show consistent learning with decreasing blocking rates; capacity 10 requires more episodes.
-3. **Generalization:** Evaluation matches training for both capacities, indicating no overfitting.
-4. **Stability:** Moving averages (window=10) show stable convergence without oscillations.
+1. **Capacity Impact:** With capacity 10, the network blocks about 25–30% of requests, while capacity 20 reduces blocking to roughly 10–12%. This directly shows how extra wavelength resources improve service quality under the same traffic.
+2. **Learning Efficiency:** In both settings, the DQN steadily lowers blocking over episodes, showing effective learning. The capacity-10 agent improves more slowly and to a worse final level, reflecting the harder, more constrained problem.
+3. **Generalization:** For both capacities, training and evaluation blocking curves are very close. This indicates the learned policies transfer well to unseen episodes and are not just memorizing the training data.
+4. **Stability:** Ten-episode moving averages produce smooth, monotonic trends without large spikes. That suggests the training process is numerically stable and the policies converge rather than oscillating.
 
 ## File Structure
 
